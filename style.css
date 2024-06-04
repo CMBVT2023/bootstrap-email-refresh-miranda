@@ -1,0 +1,28 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    min-width: 370px;
+    min-height: 670px;
+}
+
+body {
+    background-color: #000000;
+    color: #F7F7FF;
+}
+
+.main-button-design {
+    background-color: #406E8E;
+    color: #000000;
+    height: 40px;
+}
+
+.secondary-button-design {
+    background-color: #406E8E;
+    color: #F7F7FF;
+}
+
+#search-box {
+    height: 35px;
+}
