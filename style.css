@@ -4,12 +4,16 @@ html {
     overflow: hidden;
 
     min-width: 370px;
-    min-height: 670px;
+    min-height: 370px;
 }
 
 body {
     background-color: #000000;
     color: #F7F7FF;
+}
+
+#main-container {
+    height: 99vh;
 }
 
 .main-button-design {
@@ -23,6 +27,21 @@ body {
     color: #F7F7FF;
 }
 
+.main-colors {
+    background-color: #406E8E;
+    color: #F7F7FF;
+}
+
 #search-box {
     height: 35px;
+}
+
+#email-display, #email-list{
+    height: 80%;
+    min-height: 250px;
+    overflow-y: auto;
+}
+
+#email-list {
+    scrollbar-color: #406E8E #F7F7FF;
 }

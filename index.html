@@ -87,9 +87,18 @@
                 
             </div>
 
+            <!-- Compose, Reply, and Forward Buttons -->
+            <div class="row m-1 justify-content-center justify-content-md-end position-absolute bottom-0 end-0 container-fluid z-1">
+                <div class="col-12 col-md-6 col-xl-4 row">
+                    <button class="col-5 fs-5 main-button-design">Compose</button>
+                    <button class="col-3 fs-5 main-button-design">Reply</button>
+                    <button class="col-4 fs-5 main-button-design">Forward</button>
+                </div>
+            </div>
+
             <!-- Main Email Container -->
-            <div class="row m-1">
-                <div class="col-2 d-none d-xl-block container-fluid">
+            <div class="row m-1 h-100">
+                <div class="col-2 d-none d-xl-block h-100 container-fluid">
                     <div class="row">
                         <button class="col-12 secondary-button-design">Favorites</button>
                         <button class="col-6 secondary-button-design">Select All</button>
@@ -106,24 +115,96 @@
                     </div>
                 </div>
                 
-                <div class="col-12 col-md-4 col-xl-2">
+                <div class="col-12 col-md-4 col-xl-2 h-100">
                     <!-- Hover added -->
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action"
-                            >Email #1</a
-                        >
-                        <a href="#" class="list-group-item list-group-item-action"
-                            >Email #2</a
-                        >
-                        <a href="#" class="list-group-item list-group-item-action"
-                            >Email #3</a
-                        >
+                    <div class="list-group" id="email-list">
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action lh-1 container-fluid main-colors">
+                            <div class="row">
+                                <p class="fs-4 col-6">Email</p>
+                                <p class="fs-5 col-6 text-center">Sender</p>
+                            </div>
+                            <div class="row">
+                                <p class="col-12">Content</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
-                <div class="col-8 d-none d-md-block">
-                    <div class="card">
-                        <div class="card-body">
+                <div class="col-8 d-none d-md-block h-100">
+                    <div class="card" id="email-display">
+                        <div class="card-body main-colors">
                             <h4 class="card-title">Email</h4>
                             <p class="card-text">Placeholder text</p>
                         </div>
@@ -132,14 +213,6 @@
                 </div>
             </div>
 
-            <!-- Compose, Reply, and Forward Buttons -->
-            <div class="row m-1 justify-content-center justify-content-md-end container-fluid">
-                <div class="col-12 col-md-6 col-xl-4 row">
-                    <button class="col-5 fs-5 main-button-design">Compose</button>
-                    <button class="col-3 fs-5 main-button-design">Reply</button>
-                    <button class="col-4 fs-5 main-button-design">Forward</button>
-                </div>
-            </div>
         </div>
 
         <script
