@@ -22,9 +22,19 @@ body {
     height: 40px;
 }
 
+.main-button-design:hover {
+    color: #F7F7FF;
+    transform: scale(1.01);
+}
+
 .secondary-button-design {
     background-color: #406E8E;
     color: #F7F7FF;
+}
+
+.secondary-button-design:hover {
+    color: #000000;
+    transform: scale(1.01);
 }
 
 .main-colors {
@@ -40,8 +50,32 @@ body {
     height: 80%;
     min-height: 250px;
     overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#email-display{
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 3px #406E8E;
 }
 
 #email-list {
     scrollbar-color: #406E8E #F7F7FF;
+}
+
+.email-header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.email-sender, .email-content {
+    font-size: 12px;
+}
+
+.email-subject {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.email-list-item:hover {
+    background-color: #406E8E;
 }
