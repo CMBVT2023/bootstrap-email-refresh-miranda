@@ -22,16 +22,106 @@
 
     <!-- TODO: 
         Things to add
-            Second compose, reply, and forward buttons, for triggering offcanvas email area.
             Offcanvas Email text area
-            modal email text area
-            Offcanvas menu
     -->
 
     <body>
 
         <!-- Main Document Container -->
         <div class="container-fluid" id="main-container">
+            <!-- New Email Modal -->
+             
+            <div
+                class="modal fade"
+                id="emailComposeModal"
+                tabindex="-1"
+                
+                role="dialog"
+                aria-labelledby="emailComposeModalHeading"
+                aria-hidden="true"
+            >
+                <div
+                    class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
+                    role="document"
+                >
+                    <div class="modal-content main-colors">
+                        <div class="modal-header" id="emailComposeModalHeader">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <h5 class="mb-3 col-12 modal-title" id="emailComposeModalHeading">
+                                        New Message
+                                    </h5>
+                                </div>
+                                <div class="row">
+                                    <input class="col-8" type="text" placeholder="Recipients...">
+                                    <input class="col-2" type="text" placeholder="CC...">
+                                    <input class="col-2" type="text" placeholder="BCC...">
+                                </div>
+                                <div class="row">
+                                    <input class="col-12" type="text" placeholder="Subject...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body" id="emailComposeModalContent">
+                            <textarea class="h-100 w-100" placeholder="Enter email content..."></textarea>
+                        </div>
+                        <div class="justify-content-between modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Email OffCanvas -->   
+            <div
+                class="offcanvas offcanvas-start main-colors"
+                data-bs-scroll="true"
+                tabindex="-1"
+                id="emailComposeOffCanvas"
+                aria-labelledby="emailComposeOffCanvasHeader"
+            >
+                <div class="offcanvas-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <h5 class="mb-3 col-12 modal-title" id="emailComposeModalHeading">
+                                New Message
+                            </h5>
+                        </div>
+                        <div class="row">
+                            <input class="col-6" type="text" placeholder="Recipients...">
+                            <input class="col-3" type="text" placeholder="CC...">
+                            <input class="col-3" type="text" placeholder="BCC...">
+                        </div>
+                        <div class="row">
+                            <input class="col-12" type="text" placeholder="Subject...">
+                        </div>
+                    </div>
+                    </div>
+                <div class="offcanvas-body">
+                    <textarea class="h-50 w-100" placeholder="Enter email content..."></textarea>
+                    <div class="d-flex justify-content-between mt-5">
+                        <button type="button" class="main-button-design" data-bs-dismiss="offcanvas">Cancel</button>
+                        <button type="button" class="main-button-design" data-bs-dismiss="offcanvas">Send</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+
             <!-- Menu / Search Bar Container -->
             <div class="row m-1 align-items-center">
                 <!-- Various Menu Buttons
@@ -43,7 +133,7 @@
                     <button class="d-block d-md-none m-1 main-button-design" data-bs-toggle="collapse" href="#menuCollapse" aria-expanded="false" aria-controls="menuCollapse">
                         Menu
                     </button>
-                    <button class="d-none d-md-block d-xl-none main-button-design">
+                    <button class="d-none d-md-block d-xl-none main-button-design" data-bs-toggle="offcanvas" data-bs-target="#offCanvasMenu" aria-controls="Id1">
                         Menu
                     </button>
                     <h3 class="d-none d-xl-block text-center">
@@ -74,6 +164,37 @@
                         <button class="col-12 d-block d-md-none secondary-button-design">Spam</button>
                     </div>
                 </div>
+                
+                <div
+                    class="offcanvas offcanvas-start main-colors"
+                    data-bs-scroll="true"
+                    tabindex="-1"
+                    id="offCanvasMenu"
+                    aria-labelledby="Enable both scrolling & backdrop"
+                >
+                    <div class="offcanvas-header">
+                        <h5 class="text-center offcanvas-title" id="Enable both scrolling & backdrop">
+                            Menu
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="offcanvas-body container-fluid">
+                        <div class="row">
+                            <button class="col-12 mt-5 offcanvas-button-design">Inbox</button>
+                            <button class="col-12 mt-5 offcanvas-button-design">Draft</button>
+                            <button class="col-12 mt-5 offcanvas-button-design">Important</button>
+                            <button class="col-12 mt-5 offcanvas-button-design">Sent</button>
+                            <button class="col-12 mt-5 offcanvas-button-design">Trash</button>
+                            <button class="col-12 mt-5 offcanvas-button-design">Spam</button>
+                        </div>
+                    </div>
+                </div>
+                
 
                 <!-- Email Interface Header, this is only shown once the medium breakpoint is achieved. -->
                 <div class="col-3 col-md-1 col-xl-3 d-none d-md-block order-3 ">
@@ -84,11 +205,28 @@
             </div>
 
             <!-- Compose, Reply, and Forward Buttons -->
-            <div class="row m-1 justify-content-center justify-content-md-end position-absolute bottom-0 end-0 container-fluid z-1">
+            <div class="row m-1 justify-content-center justify-content-md-end position-absolute bottom-0 end-0 z-3 container-fluid">
                 <div class="col-12 col-md-6 col-xl-4 row">
-                    <button class="col-5 fs-5 main-button-design">Compose</button>
-                    <button class="col-3 fs-5 main-button-design">Reply</button>
-                    <button class="col-4 fs-5 main-button-design">Forward</button>
+                    <!-- Modal Buttons -->
+                    <button class="col-5 d-block d-xl-none fs-5 main-button-design" data-bs-toggle="modal" data-bs-target="#emailComposeModal">
+                        Compose
+                    </button>
+                    <button class="col-3 d-block d-xl-none fs-5 main-button-design" data-bs-toggle="modal" data-bs-target="#emailComposeModal">
+                        Reply
+                    </button>
+                    <button class="col-4 d-block d-xl-none fs-5 main-button-design" data-bs-toggle="modal" data-bs-target="#emailComposeModal">
+                        Forward
+                    </button>
+                    <!-- OffCanvas Buttons -->
+                    <button class="col-5 d-none d-xl-block fs-5 main-button-design" data-bs-toggle="offcanvas" data-bs-target="#emailComposeOffCanvas" aria-controls="emailComposeOffCanvas">
+                        Composes
+                    </button>
+                    <button class="col-3 d-none d-xl-block fs-5 main-button-design">
+                        Reply
+                    </button>
+                    <button class="col-4 d-none d-xl-block fs-5 main-button-design">
+                        Forward
+                    </button>
                 </div>
             </div>
 

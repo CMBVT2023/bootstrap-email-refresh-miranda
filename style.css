@@ -37,6 +37,17 @@ body {
     transform: scale(1.01);
 }
 
+.offcanvas-button-design {
+    background-color: #406E8E;
+    color: #F7F7FF;
+    height: 50px;
+}
+
+.offcanvas-button-design:hover {
+    color: #000000;
+    transform: scale(1.01);
+}
+
 .main-colors {
     background-color: #406E8E;
     color: #F7F7FF;
@@ -48,7 +59,7 @@ body {
 
 #email-display, #email-list{
     height: 80%;
-    min-height: 250px;
+    min-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -78,4 +89,33 @@ body {
 
 .email-list-item:hover {
     background-color: #406E8E;
+}
+
+#emailComposeModalHeader {
+    height: 20vh;
+    min-height: 100px;
+}
+
+#emailComposeModalContent {
+    height: 25vh;
+    min-height: 150px;
+}
+
+
+@media screen and (max-height: 560px) {
+    #email-display, #email-list{
+        height: 75%;
+    }
+}
+
+@media screen and (max-height: 440px) {
+    #email-display, #email-list{
+        height: 70%;
+    }
+}
+
+@media screen and (max-height: 370px) {
+    #email-display, #email-list{
+        height: 60%;
+    }
 }
