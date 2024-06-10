@@ -68,3 +68,11 @@ function loadEmailEventListeners() {
 }
 
 loadEmailEventListeners();
+
+const buttonList = document.getElementsByClassName('errorButton');
+for (const items of buttonList) {
+    const popover = new bootstrap.Popover(items, {
+        trigger: 'focus',
+        animation: true
+      })
+};

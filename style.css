@@ -122,13 +122,20 @@ body {
 }
 
 #emailComposeModalHeader {
-    height: 20vh;
-    min-height: 100px;
+    height: 25vh;
+    min-height: 25px;
+    overflow-y: scroll;
 }
 
 #emailComposeModalContent {
     height: 25vh;
     min-height: 150px;
+}
+
+.custom-popover {
+    --bs-popover-border-color: #8A4F7D;
+    --bs-popover-header-bg: #406E8E;
+    --bs-popover-header-color: #F7F7FF;
 }
 
 
