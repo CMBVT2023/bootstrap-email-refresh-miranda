@@ -22,7 +22,9 @@
 
     <!-- TODO: 
         Things to add
-            Offcanvas Email text area
+            Popovers
+                Have them occur if you click any of the menu options and say that some error has occurred.
+                Badge on inbox buttons
     -->
 
     <body>
@@ -52,18 +54,38 @@
                                         New Message
                                     </h5>
                                 </div>
-                                <div class="row">
-                                    <input class="col-8" type="text" placeholder="Recipients...">
-                                    <input class="col-2" type="text" placeholder="CC...">
-                                    <input class="col-2" type="text" placeholder="BCC...">
+
+                                <div class="row g-0">
+                                    <div class="col-8 form-floating">
+                                        <input class="form-control user-text-input" type="email" placeholder="Recipients..." id="floatRecipientsEmailModal">
+                                        <label for="floatRecipientsEmailModal" class="floating-label-colors">Recipients</label>
+                                    </div>
+                                    <div class="col-2 form-floating">
+                                        <input class="form-control user-text-input" type="email" placeholder="CC..." id="floatCCEmailModal">
+                                        <label for="floatCCEmailModal" class="floating-label-colors">CC</label>
+                                    </div>
+                                    <div class="col-2 form-floating">
+                                        <input class="form-control user-text-input" type="email" placeholder="CC..." id="floatBCCEmailModal">
+                                        <label for="floatBCCEmailModal" class="floating-label-colors">BCC</label>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    <input class="col-12" type="text" placeholder="Subject...">
+                                <div class="row g-0">
+                                    <div class="col-12 form-floating">
+                                        <input class="form-control user-text-input" type="text" placeholder="Subject..." id="floatSubjectEmailModal">
+                                        <label for="floatSubjectEmailModal" class="floating-label-colors">Subject</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-body" id="emailComposeModalContent">
-                            <textarea class="h-100 w-100" placeholder="Enter email content..."></textarea>
+                            <div class="container-fluid h-100 w-100">
+                                <div class="row g-0 h-100 w-100">
+                                    <div class="col-12 form-floating">
+                                        <textarea class="form-control h-100 w-100 user-text-input" placeholder="Enter email content..." id="floatContentEmailModal"></textarea>
+                                        <label for="floatContentEmailModal" class="floating-label-colors">Enter email content</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="justify-content-between modal-footer">
                             <button
@@ -87,7 +109,7 @@
 
             <!-- New Email OffCanvas -->   
             <div
-                class="offcanvas offcanvas-start main-colors"
+                class="offcanvas offcanvas-end main-colors"
                 data-bs-scroll="true"
                 tabindex="-1"
                 id="emailComposeOffCanvas"
@@ -96,25 +118,47 @@
                 <div class="offcanvas-header">
                     <div class="container-fluid">
                         <div class="row">
-                            <h5 class="mb-3 col-12 modal-title" id="emailComposeModalHeading">
+                            <h5 class="mb-3 col-12 modal-title" id="emailComposeOffCanvas">
                                 New Message
                             </h5>
                         </div>
-                        <div class="row">
-                            <input class="col-6" type="text" placeholder="Recipients...">
-                            <input class="col-3" type="text" placeholder="CC...">
-                            <input class="col-3" type="text" placeholder="BCC...">
+
+                        <div class="row g-0">
+                            <div class="col-8 form-floating">
+                                <input class="form-control user-text-input" type="email" placeholder="Recipients..." id="floatRecipientsEmailOffCanvas">
+                                <label for="floatRecipientsEmailOffCanvas" class="floating-label-colors">Recipients</label>
+                            </div>
+                            <div class="col-2 form-floating">
+                                <input class="form-control user-text-input" type="email" placeholder="CC..." id="floatCCEmailOffCanvas">
+                                <label for="floatCCEmailOffCanvas" class="floating-label-colors">CC</label>
+                            </div>
+                            <div class="col-2 form-floating">
+                                <input class="form-control user-text-input" type="email" placeholder="CC..." id="floatBCCEmailOffCanvas">
+                                <label for="floatBCCEmailOffCanvas" class="floating-label-colors">BCC</label>
+                            </div>
                         </div>
-                        <div class="row">
-                            <input class="col-12" type="text" placeholder="Subject...">
+                        <div class="row g-0">
+                            <div class="col-12 form-floating">
+                                <input class="form-control user-text-input" type="text" placeholder="Subject..." id="floatSubjectEmailOffCanvas">
+                                <label for="floatSubjectEmailOffCanvas" class="floating-label-colors">Subject</label>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </div>
                 <div class="offcanvas-body">
-                    <textarea class="h-50 w-100" placeholder="Enter email content..."></textarea>
-                    <div class="d-flex justify-content-between mt-5">
-                        <button type="button" class="main-button-design" data-bs-dismiss="offcanvas">Cancel</button>
-                        <button type="button" class="main-button-design" data-bs-dismiss="offcanvas">Send</button>
+                    <div class="container-fluid h-75">
+                        <div class="row g-0 h-100 w-100">
+                            <div class="col-12 form-floating">
+                                <textarea class="form-control h-100 w-100 user-text-input" placeholder="Enter email content..." id="floatContentEmailOffCanvas"></textarea>
+                                <label for="floatContentEmailOffCanvas" class="floating-label-colors">Enter email content</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-between align-items-end mt-5">
+                                <button type="button" class="secondary-button-design" data-bs-dismiss="offcanvas">Cancel</button>
+                                <button type="button" class="secondary-button-design" data-bs-dismiss="offcanvas">Send</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -142,7 +186,7 @@
                 </div>
 
                 <!-- Searchbar input -->
-                <input class="col-9 col-md-4 col-xl-8 order-1 order-md-2" type="text" id="search-box" placeholder="Search...">
+                <input class="col-9 col-md-4 col-xl-8 order-1 order-md-2 user-text-input" type="text" id="search-box" placeholder="&#8981; Search...">
 
                 <!-- Important Menu Options -->
                 <div class="col-12 col-md-5 d-xl-none order-2 order-md-1 order-xl-3 container-fluid">
@@ -362,6 +406,7 @@
 
         </div>
 
+        <script src="https://kit.fontawesome.com/2b74dc5e8a.js" crossorigin="anonymous"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

@@ -20,21 +20,25 @@ body {
     background-color: #406E8E;
     color: #000000;
     height: 40px;
+    border-radius: 5px;
 }
 
 .main-button-design:hover {
     color: #F7F7FF;
     transform: scale(1.01);
+    background-color: #8A4F7D;
 }
 
 .secondary-button-design {
     background-color: #406E8E;
     color: #F7F7FF;
+    border-radius: 5px;
 }
 
 .secondary-button-design:hover {
     color: #000000;
     transform: scale(1.01);
+    background-color: #8A4F7D;
 }
 
 .offcanvas-button-design {
@@ -46,6 +50,31 @@ body {
 .offcanvas-button-design:hover {
     color: #000000;
     transform: scale(1.01);
+    background-color: #8A4F7D;
+}
+
+.user-text-input {
+    border-radius: 5px;
+    background-color: #A0C1D1;
+    border-color: #8A4F7D;
+    box-shadow: 1px 1px #8A4F7D;
+
+}
+
+.user-text-input:focus {
+    outline: #8A4F7D solid 3px;
+    transform: scale(1.01);
+    background-color: #A0C1D1;
+}
+
+.user-text-input::placeholder {
+    color: #231B1B;
+    font-size: 18px;
+}
+
+.floating-label-colors {
+    color: #231B1B;
+    background-color: transparent;
 }
 
 .main-colors {
@@ -88,7 +117,8 @@ body {
 }
 
 .email-list-item:hover {
-    background-color: #406E8E;
+    background-color: #8A4F7D;
+    cursor: pointer;
 }
 
 #emailComposeModalHeader {
